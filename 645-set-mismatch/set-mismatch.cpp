@@ -2,7 +2,7 @@ class Solution {
 public:
     vector<int> findErrorNums(vector<int>& nums) {
         vector<int> result;
-        sort(nums.begin(),nums.end());
+        
         unordered_map<int,int> numberCount;
 
         for(int i=0;i<nums.size();i++)
