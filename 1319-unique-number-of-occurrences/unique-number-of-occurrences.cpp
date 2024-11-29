@@ -7,11 +7,12 @@ public:
         {
             mpp[arr[i]]++;
         }
-        for(auto it = mpp.begin(); it != mpp.end(); ++it)
+        vector<int> vec(arr.size() + 1,0);
+        for(auto it : mpp)
         {
-            if(set.find(it->second) != set.end()) return false;
+            if(vec[it.second] > 0) return false;
 
-            set.insert(it->second);
+            vec[it.second]++; 
         }
         return true;
     }
