@@ -1,15 +1,24 @@
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-        int count = 0, candidate = 0;
-        //Boyer Moore algo or smth
-        for(int num : nums)
+        unordered_map<int,int> mpp;
+        for(int i=0;i<nums.size();i++)
         {
-            if(count == 0) candidate = num;
-
-            if(candidate != num) count--;
-            else if(candidate == num) count++; 
+            mpp[nums[i]]++;
         }
-        return candidate;
+
+        int max = 0;
+        int top;
+
+        for(auto it = mpp.begin();it != mpp.end(); it++)
+        { 
+            if(it->second > max) 
+            {
+                max = it->second;
+                top = it->first;
+            }
+        }
+
+        return top;
     }
 };
