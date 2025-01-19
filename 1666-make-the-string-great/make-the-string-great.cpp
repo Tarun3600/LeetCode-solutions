@@ -16,8 +16,7 @@ public:
 
         //stack reconstruction
         string res;
-        if(st.empty())
-        return "";
+        
         while(!st.empty())
         {
             res += st.top();
