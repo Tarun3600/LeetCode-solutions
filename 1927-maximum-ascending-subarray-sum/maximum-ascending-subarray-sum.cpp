@@ -11,12 +11,19 @@ public:
             {
                 sum += nums[i];
             }
+            else if(nums[i] < nums[i-1])
+            {
+                if(maxSum < sum)
+                maxSum = sum;
+                sum = nums[i];
+            }
             else
             {
-                maxSum = std::max(maxSum, sum);
+                if(maxSum < sum) maxSum = sum;
                 sum = nums[i];
             }
         }
-        return std::max(maxSum, sum);
+        if(maxSum < sum) maxSum = sum;
+        return maxSum;
     }
 };
