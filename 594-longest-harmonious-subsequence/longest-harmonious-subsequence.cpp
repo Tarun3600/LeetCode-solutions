@@ -4,7 +4,7 @@ public:
         sort(nums.begin(),nums.end());
         int i=0;// i is start
         int maxcount = 0;
-        for(int j=1;j<nums.size();j++) //j is end
+        for(int j=0;j<nums.size();j++) //j is end
         {
             while(nums[j] - nums[i] > 1)
             {
