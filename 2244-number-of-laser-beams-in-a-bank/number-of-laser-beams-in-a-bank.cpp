@@ -15,10 +15,8 @@ public:
         }
     int result = 0;
 
-    if (countDevices.size() < 2)
-            return 0;
-
-            
+    if (countDevices.size() < 2) return 0;
+     
     for(int i=0;i<countDevices.size() - 1;i++)
     {
         result += countDevices[i] * countDevices[i+1];
