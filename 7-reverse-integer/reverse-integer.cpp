@@ -1,14 +1,14 @@
 class Solution {
 public:
     int reverse(int x) {
-        bool flag = true;
-        if(x < 0) flag = false;
-        string s = to_string(x);;
-        std::reverse(s.begin(),s.end());
-        long long res = stoll(s);
-        if(!flag) res = 0 - res;
-        if(res > INT_MAX || res < INT_MIN) return 0;
-        return static_cast<int>(res);
-        
+        int res = 0;
+        while(x != 0)
+        {
+            int temp = x % 10;
+            if(res > INT_MAX / 10 || res < INT_MIN / 10) return 0;
+            res = (res * 10) + temp;
+            x = x / 10;
+        }
+        return res;
     }
 };
