@@ -2,22 +2,18 @@ class Solution {
 public:
     long long sumAndMultiply(int n) {
         string s = to_string(n);
-        string temp = "";
-        bool flag = false;
+        long long x = 0;
         int sum = 0;
-        for(char c : s)
+        for(char ch : s)
         {
-            if(c != '0')
+            if(ch != '0')
             {
-            temp += c;
-            sum += c - '0';
-            flag = true;
+                int digit = ch - '0';
+                sum += digit;
+                x = (x * 10) + digit;
             }
         }
-        if(temp.empty()) return 0;
-        long long x = stoi(temp);
-        if(!flag) x = 0;
+
         return x * sum;
-        
     }
 };
