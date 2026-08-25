@@ -1,21 +1,14 @@
 class Solution {
 public:
     int missingMultiple(vector<int>& nums, int k) {
-        int n = 1; // m x n will be our formula
-        unordered_set<int> st(nums.begin(),nums.end());
-        bool flag = true;
-        while(flag)
+        for(int i=1;i<10000;i++)
         {
-            int multiple = k * n;
-            if(!st.count(multiple))
+            int multi = i * k;
+            if(find(nums.begin(),nums.end(),multi) == nums.end())
             {
-                return multiple;
-            } 
-            else
-            {
-                n++;
-            } 
+                return multi;
+            }
         }
-        return 0;
+        return -1;
     }
 };
